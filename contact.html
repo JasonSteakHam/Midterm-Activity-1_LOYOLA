@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Jaymark Loyola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="frame">
+    <header class="nav">
+      <a href="index.html" class="logo" aria-label="Home">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <rect x="3" y="3" width="15" height="15" rx="3" class="logo-fill" />
+          <rect x="14" y="14" width="15" height="15" rx="3" fill="none" class="logo-stroke" stroke-width="3" />
+        </svg>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html" target="_blank" rel="noopener">About</a>
+        <a href="contact.html" target="_blank" rel="noopener" class="active" aria-current="page">Contact</a>
+        <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="pop-wrap">
+          <button class="icon-btn dark" id="accentBtn" type="button" aria-label="Change accent colour" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 2.3"/></svg>
+          </button>
+          <div class="popover" id="accentPop" hidden>
+            <p class="pop-title">Accent colour</p>
+            <div class="swatches" id="swatches">
+              <button data-accent="lime" aria-label="Lime"></button>
+              <button data-accent="aqua" aria-label="Aqua"></button>
+              <button data-accent="amber" aria-label="Amber"></button>
+              <button data-accent="violet" aria-label="Violet"></button>
+            </div>
+          </div>
+        </div>
+        <a class="icon-btn dark" href="contact.html" target="_blank" rel="noopener" aria-label="Get in touch">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main class="layout">
+      <section class="hero">
+        <div class="shapes" id="shapes" aria-hidden="true"></div>
+        <h1>Get in<br />touch</h1>
+        <p class="hero-copy">
+          Tell me about your project and I’ll reply within two working days.
+          You can also email me directly at
+          <button type="button" class="link-btn" id="copyEmail">jaymarkloyola@gmail.com</button>.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form class="contact" id="contactForm" novalidate>
+          <label>Your name
+            <input type="text" name="name" required autocomplete="name" />
+            <span class="err">Enter your name.</span>
+          </label>
+          <label>Email
+            <input type="email" name="email" required autocomplete="email" />
+            <span class="err">Enter a valid email, like you@example.com.</span>
+          </label>
+          <div class="field">Budget
+            <div class="chips" id="budgetChips">
+              <button type="button" data-v="Under $2k">Under 20k</button>
+              <button type="button" data-v="$2k–$8k" class="on">50k–80k</button>
+              <button type="button" data-v="$8k+">100k+</button>
+            </div>
+          </div>
+          <label>About your project
+            <textarea name="message" rows="5" required></textarea>
+            <span class="err">Tell me a little about what you need.</span>
+          </label>
+          <div class="cta">
+            <button class="primary" type="submit">Send message</button>
+            <p class="fine">Opens your email app with the message ready to send</p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
